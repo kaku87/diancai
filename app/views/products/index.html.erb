@@ -1,38 +1,134 @@
-<%- model_class = Product -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:price) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= link_to product.id, product_path(product) %></td>
-        <td><%= product.name %></td>
-        <td><%= product.price %></td>
-        <td><%=l product.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_product_path(product), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      product_path(product),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="contain">
+    <div class="top">
+        <div class="top_contain">
+            <div>
+                <div class="top_wrap">欢迎进入点餐系统</div>
+                <div class="top_wrap">时间</div>
+                <span class="time">2015/6/25 22:20</span>
+                <div class="clear"></div>
+            </div>
+        </div>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_product_path,
-            :class => 'btn btn-primary' %>
+    </div>
+    <div class="left">
+        <div class="type type_selected">お肉</div>
+        <div class="type">野菜</div>
+        <div class="type">果物</div>
+        <div class="type">飲み物</div>
+        <div class="type">前菜</div>
+    </div>
+    <div class="right">
+        <div class="shop_wrap">
+            <div>
+                <div class="shop_title">注文履歴</div>
+                <div class="shop_title">単価</div>
+                <div class="clear"></div>
+            </div>
+            <div class="shop_main">
+                <div>
+                    <div class="name">ズワイカニ</div>
+                    <div class="price">1*15</div>
+                    <div class="clear"></div>
+                </div>
+                <div>
+                    <div class="name">ズワイカニ</div>
+                    <div class="price">1*15</div>
+                    <div class="clear"></div>
+                </div>
+                <div>
+                    <div class="name">ズワイカニ</div>
+                    <div class="price">1*15</div>
+                    <div class="clear"></div>
+                </div>
+                <div>
+                    <div class="name">ズワイカニ</div>
+                    <div class="price">1*15</div>
+                    <div class="clear"></div>
+                </div>
+                <div>
+                    <div class="name">ズワイカニ</div>
+                    <div class="price">1*15</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="shop_btm">
+                <span>総金額：</span>
+                <span class="price_num">20</span>
+                <spa１５００円</span>
+            </div>
+        </div>
+        <div class="btn_wrap">
+            <button>確認</button>
+            <button>取消</button>
+        </div>
+    </div>
+    <div class="center">
+        <div class="box">
+            <%= image_tag 'cai.jpg' %>
+            <div class="detail">
+                <div class="box_name">ズワイカニ</div>
+                <div class="box_price">１５００円</div>
+            </div>
+            <div>
+                <div class="cut"></div>
+                <div class="num">2</div>
+                <div class="add"></div>
+            </div>
+        </div>
+        <div class="box">
+            <%= image_tag 'cai.jpg' %>
+            <div class="detail">
+                <div class="box_name">ズワイカニ</div>
+                <div class="box_price">１５００円</div>
+            </div>
+            <div>
+                <div class="cut"></div>
+                <div class="num">2</div>
+                <div class="add"></div>
+            </div>
+        </div>
+        <div class="box">
+            <%= image_tag 'cai.jpg' %>
+            <div class="detail">
+                <div class="box_name"></div>
+                <div class="box_price">１５００円</div>
+            </div>
+            <div>
+                <div class="cut"></div>
+                <div class="num">2</div>
+                <div class="add"></div>
+            </div>
+        </div>
+        <div class="box">
+            <%= image_tag 'cai.jpg' %>
+            <div class="detail">
+                <div class="box_name"></div>
+                <div class="box_price">１５００円</div>
+            </div>
+            <div>
+                <div class="cut"></div>
+                <div class="num">2</div>
+                <div class="add"></div>
+            </div>
+        </div>
+
+
+        <div class="box_bottom">
+            <div class="box_left"></div>
+            <input class="page" value="10">
+            <div class="box_right"></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
